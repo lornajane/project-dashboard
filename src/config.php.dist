@@ -1,0 +1,2 @@
+<?php
+$config['github']['access_token'] = "your-token-here";
