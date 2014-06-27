@@ -1,10 +1,10 @@
 <?php
     // real things happen here
 
-require '../vendor/autoload.php';
-require '../config.php';
+require __DIR__.'/../vendor/autoload.php';
+require __DIR__.'/../config.php';
 
-$client = new \Guzzle\Http\Client("https://api.github.com/");
+$client = new Guzzle\Http\Client("https://api.github.com/");
 // add our access token to all requests
 $client->setDefaultOption("headers", array("Authorization" => "token " . $config['github']['access_token']));
 
@@ -20,7 +20,7 @@ $api_commits_request = $client->get("/repos/joindin/joindin-api/commits");
 $api_commits = $api_commits_request->send()->json();
 
 // now output the views
-require("../templates/header.php");
+require(__DIR__."/../templates/header.php");
 // content goes here
-include("../templates/dashboard.php");
-require("../templates/footer.php");
+include(__DIR__."/../templates/dashboard.php");
+require(__DIR__."/../templates/footer.php");
