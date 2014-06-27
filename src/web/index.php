@@ -1,10 +1,10 @@
 <?php
     // real things happen here
 
-require '../vendor/autoload.php';
-require '../config.php';
+require __DIR__.'/../vendor/autoload.php';
+require __DIR__.'/../config.php';
 
-$client = new \Guzzle\Http\Client("https://api.github.com/");
+$client = new Guzzle\Http\Client("https://api.github.com/");
 // add our access token to all requests
 $client->setDefaultOption("headers", array("Authorization" => "token " . $config['github']['access_token']));
 
