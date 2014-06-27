@@ -20,7 +20,7 @@ $api_commits_request = $client->get("/repos/joindin/joindin-api/commits");
 $api_commits = $api_commits_request->send()->json();
 
 // now output the views
-require("../templates/header.php");
+require(__DIR__."/../templates/header.php");
 // content goes here
-include("../templates/dashboard.php");
-require("../templates/footer.php");
+include(__DIR__."/../templates/dashboard.php");
+require(__DIR__."/../templates/footer.php");
